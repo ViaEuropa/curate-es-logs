@@ -1,15 +1,13 @@
 actions:
   1:
     action: delete_indices
-    description: "Delete selected indices"
+    description: "Delete indices older than ${DAYS_BEFORE_DELETE} days"
     options:
-      timeout_override:
       continue_if_exception: False
-      disable_action: False
     filters:
       - filtertype: age
         source: name
         direction: older
         timestring: '%Y.%m.%d'
         unit: days
-        unit_count: ${OLDER_THAN_IN_DAYS}
+        unit_count: ${DAYS_BEFORE_DELETE}

@@ -1,6 +1,6 @@
 FROM python:2.7-alpine
 
-RUN pip install elasticsearch-curator
+RUN pip install elasticsearch-curator==5.4.1
 
 COPY config.yml .
 COPY actions.yml .
